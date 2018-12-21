@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# MooQuant
+# PyAlgoTrade mootdx module
 #
 # Copyright 2017 bopo.wang<ibopo@126.com>
 #
