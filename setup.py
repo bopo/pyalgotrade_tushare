@@ -10,12 +10,18 @@ except ImportError:
 
 from pyalgotrade_tushare import __version__
 
-with open('README.md') as readme_file:
+
+def parse_requirements(filename):
+    lineiter = (line.strip() for line in open(filename))
+    return [line for line in lineiter if line and not line.startswith("#")]
+
+with open('README.rst') as readme_file:
     readme = readme_file.read()
 
-requirements = ['pyalgotrade',]
-test_requirements = ['pyalgotrade', 'pytest',]
-setup_requirements = ['pyalgotrade',]
+requirements = parse_requirements('requirements.txt')
+test_requirements = requirements
+test_requirements.append('pytest')
+setup_requirements = requirements
 
 setup(
     name='pyalgotrade_tushare',
@@ -45,6 +51,8 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
     test_suite='tests',
     tests_require=test_requirements,

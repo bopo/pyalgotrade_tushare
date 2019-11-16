@@ -27,12 +27,12 @@ import pandas as pd
 import pyalgotrade.logger
 import tushare as ts
 from pyalgotrade import bar
-
 from pyalgotrade_tushare import barfeed
 
 
 def download_bars(instrument, begin, end):
-    return ts.get_k_data(instrument, begin, end)
+    return ts.get_k_data(instrument, start=begin, end=end, ktype='D',
+                  index=False, retry_count=3, pause=0.001)
 
 
 def download_daily_bars(instrument, year, csvFile):

@@ -1,4 +1,7 @@
 
+- split-adjusted 前复权
+- back-adjusted  后复权
+
 PyAlgoTrade tushare module
 ==============================
 

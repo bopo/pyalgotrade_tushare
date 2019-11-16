@@ -3,7 +3,6 @@
 from pyalgotrade import plotter, strategy
 from pyalgotrade.stratanalyzer import sharpe
 from pyalgotrade.technical import ma
-
 from pyalgotrade_tushare import tools
 
 
